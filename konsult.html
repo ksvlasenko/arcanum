@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Arcanum | Эзотерика и Тарология</title>
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" размеры="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" размеры="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="style5.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="knopka.js"></script>
+
+  </head>
+  <body>
+    <div class="to-up"><img src="img/naverh.png" alt="Наверх" width="80" /></div>
+  
+  <ul class="mmenuu">
+    <li><a href='index.html'>Главная</a></li>
+    <li><a href='znach.html'>Толкование карт ТАРО</a>
+        <ul class="ssubmenuu">
+            <li><a href='senior.html'>Старшие Арканы</a></li>
+            <li><a href='minor.html'>Младшие Арканы</a></li>
+        </ul>
+    </li>
+    <li><a href='infa.html'>Полезные источники</a></li>
+    <li><a href='konsult.html'>Консультация таролога</a></li>
+    <li> <form>
+      <input class="place_for_search" type="text" id="text-to-find" value="" placeholder="Поиск..." autofocus> 
+      <input class="button_for_search"   type="submit" onclick="javascript: FindOnPage('text-to-find',true); return false;" value=" " title="Начать поиск">
+      <input class="button_for_turn_back" type="button" onclick="javascript: FindOnPage('text-to-find',false); return false;" value=" " title="Отменить поиск">
+      
+    </form></li>
+</ul> 
+<div class="container">
+  <h1>Консультация Таролога</h1>
+  <a href='index.html'>Главная</a> →
+  <a href='konsult.html'>Консультация Таролога</a>
+</div>
+
+<div class="container1" >
+  <div id="foto" >
+    <div class="one" ><a><img src="img/sofa2.png" alt="СофьяТаро" width="400" /></a> 
+      <h1>Здравствуйте, давайте знакомиться!</h1> 
+      <p>   Меня зовут Софья. Я практикующий Таролог. Я занимаюсь подробным анализом интересующей Вас ситуации по картам Таро, нахожу причинно-следственные связи, прогнозирую будущее, а именно озвучиваю, в какую сторону двигается ситуация.   
+ <br>   Кроме того, вы получите рекомендации, позволяющие понять, как в рассматриваемых ситуациях действовать, на что сделать уклон для достижения цели. Ниже Вы можете выбрать расклад, который подходит именно Вам. Стоимость оказания услуги обговаривается лично.
+ <br>   Я не являюсь ясновидящей, не навожу порчи и не практикую черную магию. Все мои навыки и умения являются приобретенными.
+ <br>   Вы можете обратиться ко мне с интересующим Вас вопросом, оставив заявку.
+</p>
+</div>
+<div class="header__buttons">
+  <button id="callback-button" class="header__button">Оставить заявку</button>
+</div>
+</div>
+</header>
+<!-- Модальное окно -->
+<div class="modal" id="modal-1">
+<div class="modal__content">
+<button class="modal__close-button"></button>
+<!-- Создаём форму и указываем её обработчик и метод -->
+<form action="index.php" method="post" name="form">
+  <!-- Поле ввода имени -->
+  <div class="form">
+  <h>Оставьте заявку</h><br>
+  <input name="name" type="text" min="2" max="15" placeholder="Ваше имя" required/>
+  <br>
+  <!-- Поле ввода почты  -->
+  <input name="email" type="text" placeholder="Ваш E-mail" required/>
+  <br>
+  <!-- Поле ввода для темы сообщения -->
+  <input name="telephon" type="text" placeholder="Ваш номер телефона" required/>
+  <br>
+</div>
+  <!-- Текстовое поле для самого сообщения -->
+  <div class="message">
+  <textarea name="message" placeholder="Опишите Вашу проблему"  ></textarea>
+</div>
+<div class="checkbox">
+
+  <input type="checkbox" id="terms" required>
+  <label for="click" class="text1"> Нажимая кнопку, я принимаю условия <a href="sogl.html"> пользовательского соглашения </a> и даю своё согласие на обработку моих персональных данных
+    в соответствии с законодательством РФ. Данные не передаются третьим лицам и нигде не публикуются. </label>
+</div>
+  <br>
+  <!-- Кнопка с надписью «Отправить», которая запускает обработчик формы -->
+  <div class="otpr">
+  <input type="submit" value="Отправить" />
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container2" >
+  <h1>Расклады ТАРО</h1>
+</div>
+<div class="uslugi">
+  <div class="portfolio-wrap">
+    <div class="portfolio-item">
+    <div class="portfolio-item-wrap">
+    <img src="img/uslugi.jpeg">
+    <div class="portfolio-item-inner">
+    <div class="portfolio-heading">
+    <h3>Любовь</h3>
+    </div>
+    <ul>
+    <li><h4>Что между нами?</h4><p>Поймете, что происходит в отношениях, узнаете чувства, планы партнера и пермпективы отношений</p></li>
+    <li><h4>Где моя любовь?</h4><p>Узнаете,что мешает и что может помочь в поиске второй половинки</p></li>
+    <li><h4>Есть ли у меня шанс?</h4><p>Поможет узнать, получится ли выстроить отношения</p></li>
+    <li><h4>Тот самый</h4><p>Когда не можете определиться в выборе партнера из нескольких претендентов</p></li>
+    <li><h4>Прочее</h4></li>
+    </ul>
+    </div>
+    
+    </div>
+    </div>
+    
+    <div class="portfolio-item">
+    <div class="portfolio-item-wrap">
+
+    <img src="img/uslugi.jpeg">
+    <div class="portfolio-item-inner">
+    <div class="portfolio-heading">
+    <h3>Финансы|Карьера</h3>
+    </div>
+    <ul>
+      <li><h4>Ситуация с деньгами</h4><p>Если возникли определенные трудности с финансами, и вы не знаете, как с ними справиться</p></li>
+      <li><h4>Перспективы на работе</h4><p>Стоит ли ждать карьерного роста или же искать новую работу</p></li>
+      <li><h4>Где мне искать себя?</h4><p>Помогу выбрать сферу деятельности, в которой развиваться, где получать прибыль, и как лучше начать</p></li>
+      <li><h4>Прочее</h4></li>
+    </ul>
+    </div>
+
+    </div>
+    </div>
+    
+    <div class="portfolio-item">
+    <div class="portfolio-item-wrap">
+
+    <img src="img/uslugi.jpeg">
+    <div class="portfolio-item-inner">
+    <div class="portfolio-heading">
+    <h3>Я</h3>
+    </div>
+    <ul>
+      <li><h4>Психологическое состояние</h4><p>Разберем, что вас беспокоит,откуда взялись проблемы и что с ними делать</p></li>
+      <li><h4>Здоровье</h4><p>Почему ухудшилось самочувствие, как с этим справиться, и нужно ли чего-то опасаться</p></li>
+      <li><h4>Выбор</h4><p>Узнаете, как сложится ситуация от разных вариантов, и какой станет лучшим</p></li>
+      <li><h4>Прочее</h4></li>
+    </ul>
+    </div>
+ 
+    </div>
+    </div>
+    
+    </div>
+
+    <div class="uslugi">
+
+      <div class="portfolio-wrap">
+        <div class="portfolio-item">
+        <div class="portfolio-item-wrap">
+      
+        <img src="img/uslugi.jpeg">
+        <div class="portfolio-item-inner">
+        <div class="portfolio-heading">
+        <h3>Эзотерика</h3>
+        </div>
+        <ul>
+        <li><h4>Наличие негатива</h4><p>Проверка наличия порчи, сглаза,непрогляда, приворота и энергетического вампиризма</p></li>
+        <li><h4>Диагностика чакр</h4></li>
+        <li><h4>Сила Рода</h4><p>Диагностика семейного древа и другое</p></li>
+        <li><h4>Прошлая жизнь</h4><p>Просмотр вашей прошлой жизни, кармической задачи, влияние на вашу текущую жизнь</p></li>
+        <li><h4>Прочее</h4></li>
+        </ul>
+        </div>
+        
+        </div>
+        </div>
+        
+        <div class="portfolio-item">
+        <div class="portfolio-item-wrap">
+    
+        <img src="img/uslugi.jpeg">
+        <div class="portfolio-item-inner">
+        <div class="portfolio-heading">
+        <h3>Будущее</h3>
+        </div>
+        <ul>
+          <li><h4>Расклад на месяц</h4><p>Что может произойти и чего делать не стоит (все сферы жизни)</p></li>
+          <li><h4>Расклад на год</h4><p>Прогнозирование всех сфер жизни на год (подробный или поверхностный расклад)</p></li>
+         
+        </ul>
+        </div>
+    
+        </div>
+        </div>
+        
+        <div class="portfolio-item">
+        <div class="portfolio-item-wrap">
+    
+        <img src="img/uslugi.jpeg">
+        <div class="portfolio-item-inner">
+        <div class="portfolio-heading">
+        <h3>Прочее</h3>
+        </div>
+        <ul>
+          <li><h4>Ответ на ваш вопрос</h4><p>Если ничего из предложенного Вам не подходит</p></li>
+          <li><h4>Авторский расклад</h4><p>Когда ситуация требует прогноза, но ничего из предложенного не подходит, или ситуация уникальна </p></li>
+          <li><h4>Прочее</h4></li>
+        </ul>
+        </div>
+     
+        </div>
+        </div>
+        
+        </div>
+
+</div>
+<div class="container3" >
+  <h1>Памятка</h1>
+</div>
+<div class="pravila">
+  <div class="text">
+    
+      <br>
+      <br>
+      <h>   Обращаясь за консультацией на Таро, важно представлять особенности данной услуги и определить, для чего она Вам нужна.</h>
+         <br>   
+         <br>
+         <br>   
+         <p>  Нужно максимально точно ответить на два вопроса:</p>
+      <br>
+      <br>
+      <p>   • Что именно Вы хотите услышать?</p>
+      <br>
+      <p>   • Уверены ли Вы, что готовы узнать ответ на свой вопрос? </p>
+         <br>
+         <br>   
+      <br><h>Тем, кто обращаются за помощью, надо знать простые правила.</h>
+      <br>
+      <br> <p>  1) Запрос должен быть сформулирован максимально точно, без всяких расплывчатых фраз и перспектив. Также следует помнить о том, что не все ответы нужны и важны. Некоторые из них приносят нам только горе и несчастье.
+      </p>
+        <br>
+        <br> <p>  2) Карты Таро не способны изменить вашу судьбу или сделать за вас сложный выбор, они всего лишь являются проводником между вашим информационным полем и вами. Поэтому нужно чётко понимать,  как правильно задавать вопросы, не стоит ожидать односложного ответа – да или нет.
+        <br>
+      </p>
+        <br> <p>  3) Следует помнить, что Таро не являются универсальным инструментом, способным ответить на все ваши вопросы. Ответы на расклад – это общие фразы, которые дают общие представления о том, что может произойти при том или ином варианте развития событий. Если карты указывают на какого-то человека, не следует ждать от них точных имени, возраста и т.д. Также расклады Таро очень неточно указывают на время того или иного события. Не следует задавать вопросы, в ответ на которые вы ожидаете услышать: да, нет, когда, где. Старайтесь переформулировать свой запрос так, чтобы карты смогли на него ответить.
+        <br>
+      </p>
+        <br> <p>  4) Если идете за консультацией, будьте готовы к любому ответу. Здесь Вселенная считает реальную ситуацию, нравится она вам или нет. Если расклад неутешителен — не впадайте в панику, карты обязательно подскажут, что можно изменить.
+        <br>
+      </p>
+        <br> <p>  5) Таро — не приговор, они показывают возможное развитие ситуации. Ваша судьба - в Ваших руках!
+    </p>
+</div>
+</div>
+</div>
+
+    </body>
+    <div class="foot0"></div>
+    <footer>
+      <div class="waves">
+          <div class="wave" id="wave1"></div>
+      </div>
+      <ul class="social">
+        <li><a href="https://www.instagram.com/steampunkova"><img src='img/inst2.png' width="60" /></a></li>
+        <li><a href="http://t.me/steampunk0va"><img src='img/teleg.png' width="60"/></a></li>
+        <li><a href="https://vk.com/steampunkova"><img src='img/vk.png' width="60"/></a></li>
+          
+      </ul>
+      <ul class="menu">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="znach.html'">Толкование карт ТАРО</a></li>
+     
+          <li><a href="infa.html">Полезные источники</a></li>
+          <li><a href="konsult.html">Консультация таролога</a></li>
+      </ul>
+      _____________________________________________________________________________________________________________
+      <p>© Copyright 2022. Все права защищены.</p>
+  </footer>
+</html>
